@@ -1,0 +1,559 @@
+{{>header}}
+<!-- End Header -->
+<section id="content">
+     <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
+            <div id="success" class="alert alert-success"{{#if noMsg}}hidden{{/if}}>
+                {{successMsg}}
+            </div>
+        </div>
+    </div> 
+    <div class="banner-slider bg-slider banner-slider1">
+        <div class="wrap-item" data-navigation="true" data-transition="fade" data-autoplay="true" data-itemscustom="[[0,1]]">
+            <div class="item-slider item-slider1">
+                <div class="banner-thumb"><a href="#"><img src="images/home/home1/slide1.jpg" alt="" /></a></div>
+                <div class="banner-info animated" data-animated="fadeInLeft">
+                    <div class="container">
+                        <div class="banner-info-inner">
+                            <h2 class="title30 color">Mobile Home</h2>
+                            <h2 class="title30">Video & Air Quality Monitor New Collection</h2>
+                            <a href="/mobile-shop-list-view" class="shop-button color">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item-slider item-slider1">
+                <div class="banner-thumb"><a href="#"><img src="images/home/home1/slide2.jpg" alt="" /></a></div>
+                <div class="banner-info animated" data-animated="bounceInLeft">
+                    <div class="container">
+                        <div class="banner-info-inner">
+                            <h2 class="title30 color">Steel HR</h2>
+                            <h2 class="title30">Watch your heart Style your health.</h2>
+                            <a href="/list-view" class="shop-button color">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item-slider item-slider1">
+                <div class="banner-thumb"><a href="#"><img src="images/home/home1/slide3.jpg" alt="" /></a></div>
+                <div class="banner-info animated" data-animated="zoomInLeft">
+                    <div class="container">
+                        <div class="banner-info-inner">
+                            <h2 class="title30 color">Laptop Home</h2>
+                            <h2 class="title30">Video & Air Quality Monitor New Collection</h2>
+                            <a href="/laptop-shop-list-view" class="shop-button color">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner Slider -->
+    <div class="container">
+        <div class="product-trending-box">
+            <h2 class="title30 title-line-after font-bold">Trending</h2>
+            <div class="product-trend-slider">
+                <div class="wrap-item group-navi" data-pagination="false" data-navigation="true" data-itemscustom="[[0,1],[560,2],[768,3],[990,4]]">
+                    {{#each trending}}
+                        {{#each this}}
+                        <div class="item-product text-center style1">
+                            <div class="product-thumb">
+                                <a href="#" class="product-thumb-link zoom-thumb"><img src={{this.imagePath}} alt="" /></a>
+                                <a href="/detail-view/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                            </div>
+                            <div class="product-info">
+                                <a href="#" class="cat-parent color">{{this.category}}</a>
+                                <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                <div class="product-price">
+                                    <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                </div>
+                                <div class="product-extra-link style1">
+                                    <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                    <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                    <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                </div>
+                                <div class="product-rate">
+                                    <div class="product-rating" style="width:100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <!-- End Trending Box -->
+    </div>
+    <div class="deal-of-day text-center bg-color2 white">
+        <h2 class="title30 font-bold">Deal Of the Day</h2>
+        <div class="time-countdown deal-countdown hidden-canvas" data-date="12/12/2018" data-text='["Days","Hour","Mins","Secs"]'></div>
+        <a href="#" class="shop-button white">Daily Deals</a>
+        <div class="deal-of-thumb wow flipInX">
+            <img src="images/home/home1/phone.png" alt="" />
+        </div>
+    </div>
+    <!-- End Deal -->
+    {{#each featured}}
+    {{#each this}}
+    <div class="parallax featured-banner-product" data-image={{this.imagePath}}>
+        <div class="banner-info">
+            <div class="container">
+                <div class="featured-banner-info wow zoomIn">
+                    <h3 class="title30 title-line-after">Featured</h3>
+                    <h2 class="title60 color">{{this.title}}</h2>
+                    <h3 class="title30 silver font-light">The latest technology</h3>
+                    <h3 class="title30 font-light color">${{this.price}}</h3>
+                    <div class="banner-button">
+                        <a href="/add-to-cart/{{this.id}}" class="shop-button color">Shop Now</a>
+                        <a href="/detail-view/{{this.id}}" class="shop-button bg-color2">More Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    {{/each}}
+    <!-- End Banner -->
+   
+    <div class="container">
+        <div class="category-product-box">
+            <h3 class="title30 font-bold title-line-after">Mobile</h3>
+            <div class="category-product-slider">
+                <div class="wrap-item group-navi" data-pagination="false" data-navigation="true" data-itemscustom="[[0,1]]">
+                    <div class="item">
+                        <div class="row">
+                            {{#each featured}}
+                            {{#each this}}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="item-product text-center style1">
+                                    <div class="product-thumb">
+                                        <a href="#" class="product-thumb-link zoom-thumb"><img src={{this.imagePath}} width="576px" height="537" alt=""></a>
+                                        <a href="/detail-view/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="cat-parent color">Mobile</a>
+                                        <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                        <div class="product-price">
+                                            <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                        </div>
+                                        <div class="product-extra-link style1">
+                                            <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                            <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                            <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                        </div>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                            {{#each smartphone1}}
+                            {{#each this}}
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="item-product text-center style1">
+                                    <div class="product-thumb">
+                                        <a href="#" class="product-thumb-link zoom-thumb"><img src="{{this.imagePath}}" alt=""></a>
+                                        <a href="/detail-view/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                                        <div class="product-label">
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="cat-parent color">Mobile</a>
+                                        <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                        <div class="product-price">
+                                            <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                        </div>
+                                        <div class="product-extra-link style1">
+                                            <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                            <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                            <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                        </div>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                        </div>
+                    </div>
+                    <!-- End Item -->
+                    <div class="item">
+                        <div class="row">
+                            {{#each featured}}
+                            {{#each this}}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="item-product text-center style1">
+                                    <div class="product-thumb">
+                                        <a href="#" class="product-thumb-link zoom-thumb"><img src={{this.imagePath}} width="576px" height="537" alt=""></a>
+                                        <a href="/detail-view/{{this.id}}/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="cat-parent color">Mobile</a>
+                                        <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                        <div class="product-price">
+                                            <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                        </div>
+                                        <div class="product-extra-link style1">
+                                            <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                            <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                            <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                        </div>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                            {{#each smartphone2}}
+                            {{#each this}}
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="item-product text-center style1">
+                                    <div class="product-thumb">
+                                        <a href="#" class="product-thumb-link zoom-thumb"><img src="{{this.imagePath}}" alt=""></a>
+                                        <a href="/detail-view/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                                        <div class="product-label">
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="cat-parent color">Mobile</a>
+                                        <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                        <div class="product-price">
+                                            <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                        </div>
+                                        <div class="product-extra-link style1">
+                                            <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                            <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                            <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                        </div>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                        </div>
+                    </div>
+                    <!-- End Item -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="deal-of-day text-center bg-color2 white">
+        <h2 class="title30 font-bold">Deal Of the Day</h2>
+        <div class="time-countdown deal-countdown hidden-canvas" data-date="12/12/2018" data-text='["Days","Hour","Mins","Secs"]'></div>
+        <a href="#" class="shop-button white">Daily Deals</a>
+        <div class="deal-of-thumb wow flipInX">
+            <img src="images/home/home1/phone.png" alt="" />
+        </div>
+    </div>
+    <!-- End Deal -->
+    <div class="container">
+        <div class="category-product-box">
+            <h3 class="title30 font-bold title-line-after">Laptop</h3>
+            <div class="category-product-slider">
+                <div class="wrap-item group-navi" data-pagination="false" data-navigation="true" data-itemscustom="[[0,1]]">
+                    <div class="item">
+                        <div class="row">
+                            {{#each featured}}
+                            {{#each this}}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="item-product text-center style1">
+                                    <div class="product-thumb">
+                                        <a href="#" class="product-thumb-link zoom-thumb"><img src={{this.imagePath}} width="576px" height="537" alt=""></a>
+                                        <a href="/detail-view/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="cat-parent color">Laptop</a>
+                                        <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                        <div class="product-price">
+                                            <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                        </div>
+                                        <div class="product-extra-link style1">
+                                            <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                            <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                            <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                        </div>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                            {{#each laptop1}}
+                            {{#each this}}
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="item-product text-center style1">
+                                    <div class="product-thumb">
+                                        <a href="#" class="product-thumb-link zoom-thumb"><img src="{{this.imagePath}}" alt=""></a>
+                                        <a href="/detail-view/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                                        <div class="product-label">
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="cat-parent color">Laptop</a>
+                                        <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                        <div class="product-price">
+                                            <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                        </div>
+                                        <div class="product-extra-link style1">
+                                            <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                            <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                            <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                        </div>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                        </div>
+                    </div>
+                    <!-- End Item -->
+                    <div class="item">
+                        <div class="row">
+                            {{#each featured}}
+                            {{#each this}}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="item-product text-center style1">
+                                    <div class="product-thumb">
+                                        <a href="#" class="product-thumb-link zoom-thumb"><img src={{this.imagePath}} width="576px" height="537" alt=""></a>
+                                        <a href="/detail-view/{{this.id}}/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="cat-parent color">Laptop</a>
+                                        <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                        <div class="product-price">
+                                            <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                        </div>
+                                        <div class="product-extra-link style1">
+                                            <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                            <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                            <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                        </div>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                            {{#each laptop2}}
+                            {{#each this}}
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="item-product text-center style1">
+                                    <div class="product-thumb">
+                                        <a href="#" class="product-thumb-link zoom-thumb"><img src="{{this.imagePath}}" alt=""></a>
+                                        <a href="/detail-view/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                                        <div class="product-label">
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="cat-parent color">Laptop</a>
+                                        <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                        <div class="product-price">
+                                            <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                        </div>
+                                        <div class="product-extra-link style1">
+                                            <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                            <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                            <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                        </div>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                        </div>
+                    </div>
+                    <!-- End Item -->
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+        <div class="category-product-box watch-cat">
+            <h3 class="title30 font-bold title-line-after">Accessories</h3>
+            <div class="category-product-slider">
+                <div class="wrap-item group-navi" data-pagination="false" data-navigation="true" data-itemscustom="[[0,1]]">
+                    <div class="item">
+                        <div class="row">
+                            {{#each featured}}
+                            {{#each this}}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="item-product text-center style1">
+                                    <div class="product-thumb">
+                                        <a href="#" class="product-thumb-link zoom-thumb"><img src={{this.imagePath}} width="576px" height="537" alt=""></a>
+                                        <a href="/detail-view/{{this.id}}/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="cat-parent color">Watch</a>
+                                        <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                        <div class="product-price">
+                                            <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                        </div>
+                                        <div class="product-extra-link style1">
+                                            <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                            <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                            <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                        </div>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                            {{#each watch1}}
+                            {{#each this}}
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="item-product text-center style1">
+                                    <div class="product-thumb">
+                                        <a href="#" class="product-thumb-link zoom-thumb"><img src="{{this.imagePath}}" alt=""></a>
+                                        <a href="/detail-view/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                                        <div class="product-label">
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="cat-parent color">Watch</a>
+                                        <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                        <div class="product-price">
+                                            <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                        </div>
+                                        <div class="product-extra-link style1">
+                                            <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                            <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                            <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                        </div>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                        </div>
+                    </div>
+                    <!-- End Item -->
+                    <div class="item">
+                        <div class="row">
+                            {{#each featured}}
+                            {{#each this}}
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="item-product text-center style1">
+                                    <div class="product-thumb">
+                                        <a href="#" class="product-thumb-link zoom-thumb"><img src={{this.imagePath}} width="576px" height="537" alt=""></a>
+                                        <a href="/detail-view/{{this.id}}/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="cat-parent color">Watch</a>
+                                        <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                        <div class="product-price">
+                                            <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                        </div>
+                                        <div class="product-extra-link style1">
+                                            <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                            <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                            <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                        </div>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                            {{#each watch2}}
+                            {{#each this}}
+                            <div class="col-md-3 col-sm-3 col-xs-6">
+                                <div class="item-product text-center style1">
+                                    <div class="product-thumb">
+                                        <a href="#" class="product-thumb-link zoom-thumb"><img src="{{this.imagePath}}" alt=""></a>
+                                        <a href="/detail-view/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail view</a>
+                                        <div class="product-label">
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <a href="#" class="cat-parent color">Watch</a>
+                                        <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                        <div class="product-price">
+                                            <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                        </div>
+                                        <div class="product-extra-link style1">
+                                            <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                            <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add to cart</a>
+                                            <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                        </div>
+                                        <div class="product-rate">
+                                            <div class="product-rating" style="width:100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                            {{/each}}
+                        </div>
+                    </div>
+                    <!-- End Item -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- End Client Box -->
+    <div class="container">
+        <div class="brand-box">
+            <h2 class="title30 font-bold title-line-after">Popular Brands</h2>
+            <div class="brand-slider">
+                <div class="wrap-item group-navi" data-pagination="false" data-autoplay="true" data-navigation="true"
+                    data-itemscustom="[[0,2],[480,3],[768,4],[990,5]]">
+                    <div class="item-brand text-center">
+                        <a href="#" class="wobble-horizontal"><img src="images/brand/homepage_brand1.png" alt="" height="90px" /></a>
+                    </div>
+                    <div class="item-brand text-center">
+                        <a href="#" class="wobble-horizontal"><img src="images/brand/homepage_brand2.png" alt="" height="90px" /></a>
+                    </div>
+                    <div class="item-brand text-center">
+                        <a href="#" class="wobble-horizontal"><img src="images/brand/homepage_brand3.png" alt="" height="90px" /></a>
+                    </div>
+                    <div class="item-brand text-center">
+                        <a href="#" class="wobble-horizontal"><img src="images/brand/homepage_brand4.png" alt="" height="90px" /></a>
+                    </div>
+                    <div class="item-brand text-center">
+                        <a href="#" class="wobble-horizontal"><img src="images/brand/homepage_brand5.png" alt="" height="90px" /></a>
+                    </div>
+                    <div class="item-brand text-center">
+                        <a href="#" class="wobble-horizontal"><img src="images/brand/homepage_brand6.png" alt="" height="90px" /></a>
+                    </div>
+                    <div class="item-brand text-center">
+                        <a href="#" class="wobble-horizontal"><img src="images/brand/homepage_brand7.png" alt="" height="90px" /></a>
+                    </div>
+                    <div class="item-brand text-center">
+                        <a href="#" class="wobble-horizontal"><img src="images/brand/homepage_brand8.png" alt="" height="90px" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Brand -->
+    </div>
+
+</section>
+
+{{>footer}}

@@ -1,0 +1,209 @@
+{{>header}}
+<!-- End Header -->
+<section id="content">
+    <div class="container">
+        <div class="bread-crumbs">
+            <a href="/home"><i class="icon ion-ios-home"></i></a>
+            <a href="#">Mobile</a>
+        </div>
+        <!-- End Bread Crumb -->
+        <div class="content-pages">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 col-sx-12">
+                    <div class="sidebar-left sidebar-shop">
+                        <div class="widget widget-product-cat">
+                            <h2 class="widget-title title14 font-bold text-uppercase">Mobile</h2>
+                            <div class="widget-content">
+                                <ul class="list-none filter-attr-default">
+                                    <li><a href="#" class="active">Dell <span class="smoke">(32)</span></a></li>
+                                    <li><a href="#">Sony Vio <span class="smoke">(15)</span></a></li>
+                                    <li><a href="#">Samsung <span class="smoke">(24)</span></a></li>
+                                    <li><a href="#">Lenovo <span class="smoke">(8)</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End Widget -->
+                        <div class="widget widget-price">
+                            <h2 class="widget-title title14 font-bold text-uppercase">price</h2>
+                            <div class="widget-content">
+                                <div class="range-filter">
+                                    <ul class="list-inline-block">
+                                        <li>
+                                            <div class="amount"></div>
+                                        </li>
+                                        <li><button class="btn-filter-price shop-button bg-color">Filter</button></li>
+                                    </ul>
+                                    <div class="slider-range"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Widget -->
+                        <div class="widget widget-color">
+                            <h2 class="widget-title title14 font-bold text-uppercase">color</h2>
+                            <div class="widget-content">
+                                <ul class="list-inline-block filter-attr list-attr-color">
+                                    <li><a href="#" style="background:#ffffff" class="border"></a></li>
+                                    <li><a href="#" style="background:#e66054"></a></li>
+                                    <li><a href="#" class="active" style="background:#d0b7cc"></a></li>
+                                    <li><a href="#" style="background:#107a8e"></a></li>
+                                    <li><a href="#" style="background:#b9cad2"></a></li>
+                                    <li><a href="#" style="background:#a7bc93"></a></li>
+                                    <li><a href="#" style="background:#d3b627"></a></li>
+                                    <li><a href="#" style="background:#b4b3ae"></a></li>
+                                    <li><a href="#" style="background:#502006"></a></li>
+                                    <li><a href="#" style="background:#311e21"></a></li>
+                                    <li><a href="#" style="background:#e6b3af"></a></li>
+                                    <li><a href="#" style="background:#f3d213"></a></li>
+                                    <li><a href="#" style="background:#bd0316"></a></li>
+                                    <li><a href="#" style="background:#cd0c20"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End Widget -->
+                        <div class="widget widget-product-cat">
+                            <h2 class="widget-title title14 font-bold text-uppercase">Manufacturers</h2>
+                            <div class="widget-content">
+                                <ul class="list-none filter-attr filter-attr-default">
+                                    <li><a href="#">Altairnano</a></li>
+                                    <li><a href="#">Coslight India</a></li>
+                                    <li><a href="#">Electrovaya</a></li>
+                                    <li><a href="#">Li-Tec Battery</a></li>
+                                    <li><a href="#">SB LiMotive</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- End Widget -->
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-8 col-sx-12">
+                    <div class="shop-title">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="font-bold title30 text-uppercase title-line-after pull-left">Dell</h2>
+                                <ul class="list-inline-block sort-bar pull-right">
+                                    <li>
+                                        <div class="select-box sort-by">
+                                            <select>
+                                                <option value="">Sort by</option>
+                                                <option value="">Price Desc</option>
+                                                <option value="">Price Asc</option>
+                                                <option value="">Name Desc</option>
+                                                <option value="">Name Asc</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="view-type">
+                                            <a href="/mobile-shop-grid-view" class="grid-view"><i class="icon ion-grid"></i></a>
+                                            <a href="/mobile-shop-list-view" class="list-view active"><i class="icon ion-android-menu"></i></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-listview list-with-sidebar">
+                        <div class="pagi-nav text-center">
+                            <div class="hidden">
+                                {{#each nextp}}
+                                <input type="text" id="nextdisable" value={{nxt}}>
+                                {{/each}}
+                                <input type="text" id="prevdisable" value={{prev}}>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-10">
+                                    <a id="prev" class="page-item"><i class="icon ion-ios-arrow-left"></i></a>
+                                    <a id="next" class="page-item"><i class="icon ion-ios-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        {{#each firstchunk}}
+                        <div id="content-page1" class="product-listview-item show">
+                            {{#each this}}
+                            <div class="item-product item-product-list drop-shadow">
+
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-5 col-xs-12">
+                                        <div class="product-thumb">
+                                            <a href="#" class="product-thumb-link zoom-thumb"><img src={{this.imagePath}}
+                                                    alt=""></a>
+                                            <a href="/detail-view/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Detail
+                                                view</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-sm-7 col-xs-12">
+                                        <div class="product-info">
+                                            <a href="#" class="cat-parent color">{{this.category}}</a>
+                                            <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                            <div class="product-price">
+                                                <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                            </div>
+                                            <div class="product-rate">
+                                                <div class="product-rating" style="width:100%"></div>
+                                            </div>
+                                            <p class="desc product-desc"> {{this.description}} .</p>
+                                            <div class="product-extra-link style1">
+                                                <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add
+                                                    to cart</a>
+                                                <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                                <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                        {{/each}}
+                        {{#each product}}
+                        <div id={{this.pagecontent}} class="product-listview-item hidden ">
+                            {{#each this}}
+                            <div class="item-product item-product-list drop-shadow">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-5 col-xs-12">
+                                        <div class="product-thumb">
+                                            <a href="#" class="product-thumb-link zoom-thumb"><img src={{this.imagePath}}></a>
+                                            <a href="/detail-view/{{this.id}}" class="quickview-link fancybox fancybox.iframe">Quick
+                                                view</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-sm-7 col-xs-12">
+                                        <div class="product-info">
+                                            <a href="#" class="cat-parent color">{{this.category}}</a>
+                                            <h3 class="title16 font-bold product-title"><a href="#">{{this.title}}</a></h3>
+                                            <div class="product-price">
+                                                <ins class="font-bold"><span>${{this.price}}</span></ins>
+                                            </div>
+                                            <div class="product-rate">
+                                                <div class="product-rating" style="width:100%"></div>
+                                            </div>
+                                            <p class="desc product-desc"> {{this.description}} .</p>
+                                            <div class="product-extra-link style1">
+                                                <a href="/add-to-cart/{{this.id}}" class="addcart-link shop-button color">Add
+                                                    to cart</a>
+                                                <a href="#" class="wishlist-link color title30"><i class="icon ion-android-favorite-outline"></i></a>
+                                                <a href="#" class="compare-link color title30"><i class="icon ion-ios-checkmark-outline"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                        {{/each}}
+                        <div class="pagi-nav text-center">
+                            <a class="page-current active page-item page-item-btn" id="page1">1</a>
+                            {{#each page}}
+                            <a href="#" id={{pageId}} class="page-item page-item-btn">{{pagenum}} </a>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Content Pages -->
+        </div>
+</section>
+<!-- End Content -->
+{{>footer}}

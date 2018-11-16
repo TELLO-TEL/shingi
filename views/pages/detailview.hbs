@@ -1,0 +1,75 @@
+
+<section id="content">
+    <div class="signup__container">
+        <div class="container__child signup__thumbnail">
+            {{#if hasErrors}}
+            <div class="alert alert-danger">
+                {{#each message}}
+                <p>{{this}}</p>
+                <br>
+                {{/each}}
+            </div>
+            {{/if}}
+            <div class="thumbnail__content text-center">
+                <h1 class="heading--primary">Welcome to MiCourVision.</h1>
+            </div>
+    
+            <div class="thumbnail__links">
+                <div class="thumbnail__content text-center">
+                    <h2 class="heading--secondary">Are you ready to join the elite?</h2>
+                </div>
+                <br>
+                <ul class="list-inline m-b-0 text-center">
+                    <li><a href="http://alexdevero.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://github.com/alexdevero" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/alexdevero" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+            </div>
+            <div class="signup__overlay"></div>
+        </div>
+        <div class="form container__child signup__form">
+            <div id="signup">
+                <h1>Sign Up for Free</h1>
+    
+                <form action="/user/signup" method="post">
+    
+                    <div class="top-row">
+                        <div class="field-wrap">
+                            <label>
+                                First Name<span class="req">*</span>
+                            </label>
+                            <input type="text" required autocomplete="off" />
+                        </div>
+    
+                        <div class="field-wrap">
+                            <label>
+                                Last Name<span class="req">*</span>
+                            </label>
+                            <input type="text" required autocomplete="off" />
+                        </div>
+                    </div>
+    
+                    <div class="field-wrap">
+                        <label>
+                            Email Address<span class="req">*</span>
+                        </label>
+                        <input type="email" required autocomplete="off" />
+                    </div>
+                    <div class="field-wrap">
+                        <label>
+                            Set A Password<span class="req">*</span>
+                        </label>
+                        <input type="password" required autocomplete="off" />
+                        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    
+                    </div>
+                    <p class="forgot"> <a class="signup__link" href="/user/signin">Already a member? Sign In.</a></p>
+                    <button type="submit" class="button button-block" />Get Started</button>
+    
+                </form>
+    
+            </div>
+        </div> <!-- /form -->
+    </div>
+</section>
+<!-- End Content -->

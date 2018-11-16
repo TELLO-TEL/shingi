@@ -1,0 +1,52 @@
+<section id="content">
+    <div class="container">
+        <form action="/data" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="shortdescription">Short Description</label>
+                <input type="text" class="form-control" name="shortDescription" id="shortdescription" placeholder="Short Description">
+            </div>
+            <div class="form-group">
+                <label for="fullDescription">Full Description</label>
+                <textarea class="form-control" id="fullDescription" name="fullDescription" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Image </label>
+                <input type="file" class="form-control-file" name="image" id="image">
+            </div>
+            <div class="form-group">
+                <label for="imageSV">ImageSV</label>
+                <input type="file" class="form-control-file" name="imageSV" id="imageSV">
+            </div>
+            <div class="form-group">
+                <label for="imageFV">ImageFV</label>
+                <input type="file" class="form-control-file" name="imageFV" id="imageFV">
+            </div>
+            <div class="form-group">
+                <label for="imageBV">ImageBV</label>
+                <input type="file" class="form-control-file" name="imageBV" id="imageBV">
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" min="0" name="price" class="form-control" id="price" >
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input type="number" min="0" name="quantity" class="form-control" id="quantity" >
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" class="form-control" name="category" id="category" >
+            </div>
+            <div class="form-group">
+                <label for="brand">Brand</label>
+                <input type="text" class="form-control" name="brand" id="brand" >
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</section>
+<!-- End Content -->

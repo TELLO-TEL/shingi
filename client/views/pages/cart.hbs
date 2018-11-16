@@ -1,0 +1,118 @@
+{{>header}}
+<!-- End Header -->
+<section id="content">
+    <div class="container">
+        <div class="content-pages">
+            {{#if product}}
+            <div class="content-about content-cart-page woocommerce">
+                <h2 class="title30 font-bold text-uppercase">Cart</h2>
+                <form method="post" action="/update-cart/{{this.item._id}}">
+                    <div class="table-responsive">
+                        <table class="shop_table cart table">
+                            <thead>
+                                <tr>
+                                    <th class="product-remove">&nbsp;</th>
+                                    <th class="product-thumbnail">&nbsp;</th>
+                                    <th class="product-name">Product</th>
+                                    <th class="product-price">Price</th>
+                                    <th class="product-quantity">Quantity</th>
+                                    <th class="product-subtotal">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each product}}
+                                <tr class="cart_item">
+                                    <td class="product-remove">
+                                        <a class="" href="/remove-to-cart/{{this.item._id}}"><i class="icon ion-android-delete"></i></a>
+                                    </td>
+                                    <td class="product-thumbnail">
+                                        <a href="#"><img src="{{this.item.imagePath}}" alt="" /></a>
+                                    </td>
+                                    <td class="product-name" data-title="Product">
+                                        <a href="#">{{this.item.title}}</a>
+                                    </td>
+                                    <td class="product-price" data-title="Price">
+                                        <span class="amount">{{this.item.price}}</span>
+                                    </td>
+                                    <td class="product-quantity" data-title="Quantity">
+                                        <div class="detail-qty info-qty border">
+                                            <span class="text-primary">{{this.qty}}</span>
+                                            <a href="/sub-to-cart/{{this.item._id}}" class=""><i class="icon ion-ios-minus-empty"></i></a>
+                                            <a href="/add1-to-cart/{{this.item._id}}" class=""><i class="icon ion-ios-plus-empty"></i></a>
+                                        </div>
+                                    </td>
+                                    <td class="product-subtotal" data-title="Total">
+                                        <span class="amount">{{this.price}}</span>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </form>
+                <div class="cart-collaterals">
+                    <div class="cart_totals ">
+                        <h2>Cart Totals</h2>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr class="cart-subtotal">
+                                        <th>Subtotal</th>
+                                        <td><strong class="amount">${{totalPrice}}</strong></td>
+                                    </tr>
+                                    <tr class="shipping">
+                                        <th>Shipping</th>
+                                        <td>
+                                            <ul class="list-none" id="shipping_method">
+                                                <li>
+                                                    <input type="radio" class="shipping_method" checked="checked" value="free_shipping"
+                                                        id="shipping_method_0_free_shipping" data-index="0" name="shipping_method[0]">
+                                                    <label for="shipping_method_0_free_shipping">Free Shipping</label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" class="shipping_method" value="local_delivery"
+                                                        id="shipping_method_0_local_delivery" data-index="0" name="shipping_method[0]">
+                                                    <label for="shipping_method_0_local_delivery">Local Delivery (Free)</label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" class="shipping_method" value="local_pickup" id="shipping_method_0_local_pickup"
+                                                        data-index="0" name="shipping_method[0]">
+                                                    <label for="shipping_method_0_local_pickup">Local Pickup (Free)</label>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr class="order-total">
+                                        <th>Total</th>
+                                        <td><strong><span class="amount">${{totalPrice}}</span></strong> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="wc-proceed-to-checkout">
+                            <a class="checkout-button button alt wc-forward bg-color" href="/checkout">Proceed to
+                                Checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{else}}
+            <div class="content-about content-cart-page woocommerce">
+                <div class="cart-collaterals">
+                    <div class="cart_totals ">
+                        <h2>There are no items in the Cart</h2>
+                        <div class="wc-proceed-to-checkout">
+                            <a class="checkout-button button alt wc-forward bg-color" href="/list-view">Checkout Our
+                                Items In Shop</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+    <!-- End Content Pages -->
+</section>
+<!-- End Content -->
+{{>footer}}

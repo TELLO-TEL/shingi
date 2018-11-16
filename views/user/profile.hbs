@@ -1,0 +1,27 @@
+{{>headerUser}}
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>User Profile</h1>
+        <hr>
+        <h2>My Orders</h2>
+        {{#each order}}
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <ul class="list-group">
+                    {{#each this.items}}
+                    <li class="list-group-item">
+                        <div class="product-thumbnail">
+                            <a href="#"><img src="../{{this.item.imagePath}}" alt="" width="70px" height="50px" /></a>
+                        </div>
+                        {{this.item.title}} | <span>{{this.qty}} Unit(s)</span>
+                        <span class="badge">${{this.price}}</span>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="panel-footer"><strong>Total Price: ${{this.cart.totalPrice}}</strong></div>
+        </div>
+        {{/each}}
+    </div>
+</div>

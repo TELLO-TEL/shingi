@@ -1,0 +1,164 @@
+{{>header}}
+<section id="content">
+    <div class="container">
+        <div class="content-pages">
+            <div class="content-about content-checkout-page woocommerce">
+                <hr>
+                <h2 class="title30 font-bold text-center">Checkout</h2>
+                <div class="row">
+                    <form action="/checkout" method="post">
+                        <div class="col-md-10 col-sm-12 col-xs-12 col-md-offset-1">
+                            <div style="height: 20px"></div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-ms-12">
+                                    <div class="check-billing">
+                                        <div class="form-my-account" action="/checkout" method="post">
+                                            <h2 class="title title18 rale-font font-bold ">Billing
+                                                Details</h2>
+                                            <p class="clearfix box-col2">
+                                                <input type="text" placeholder="First Name" name="name" required />
+                                                <input type="text" placeholder="last name" name="surname" required />
+                                            </p>
+                                            <p><input type="text" placeholder="Company Name" name="company" required /></p>
+                                            <p class="clearfix box-col2">
+                                                <input type="text" placeholder="Email" name="email" required />
+                                                <input type="text" placeholder="phone" name="phone" required />
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-ms-12">
+                                    <div class="check-address">
+                                        <div class="form-my-account" action="/checkout" method="post">
+                                            <p class="ship-address">
+                                                <label>Shipping Address Details</label>
+                                            </p>
+                                            <p><input type="text" placeholder="Country *" name="country" required /></p>
+                                            <p><input type="text" placeholder="Residential Address *" name="address" required /></p>
+                                            <p><input type="text" placeholder="Shipping Address *" name="deliveryAddress" required /></p>
+                                            <p class="clearfix box-col2">
+                                                <input type="text" placeholder="Postcode / Zip" name="postalcode" required />
+                                                <input type="text" placeholder="Town / City *" name="city" required />
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <h3 class="order_review_heading bg-color">Your order</h3>
+                            <div class="woocommerce-checkout-review-order" id="order_review">
+                                <div class="table-responsive">
+                                    <table class="shop_table woocommerce-checkout-review-order-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="product-name">Product</th>
+                                                <th class="product-total">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{#each product}}
+                                            <tr class="cart_item">
+                                                <td class="product-name product-thumbnail">
+                                                    <a href="#"><img src="{{this.item.imagePath}}" alt="" /></a>
+                                                    {{this.item.title}} <span class="product-quantity">×
+                                                        {{this.qty}}</span>
+                                                </td>
+                                                <td class="product-total">
+                                                    <span class="amount">${{this.price}}</span>
+                                                </td>
+                                            </tr>
+                                            {{/each}}
+                                        </tbody>
+                                        <tfoot>
+                                            <tr class="cart-subtotal">
+                                                <th>Subtotal</th>
+                                                <td><strong class="amount">${{totalPrice}}</strong></td>
+                                            </tr>
+                                            <tr class="shipping">
+                                                <th>Shipping</th>
+                                                <td>
+                                                    <ul class="list-none" id="shipping_method">
+                                                        <li>
+                                                            <input type="radio" class="shipping_method" value="local_delivery"
+                                                                id="shipping_method_0_local_delivery" data-index="0"
+                                                                name="shipping_method[0]">
+                                                            <label for="shipping_method_0_local_delivery">Local
+                                                                Delivery
+                                                                (Free)</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" class="shipping_method" value="local_pickup"
+                                                                id="shipping_method_0_local_pickup" data-index="0" name="shipping_method[0]">
+                                                            <label for="shipping_method_0_local_pickup">Local
+                                                                Pickup
+                                                                (Free)</label>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr class="order-total">
+                                                <th>Total</th>
+                                                <td><strong><span class="amount">${{totalPrice}}</span></strong>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <div class="woocommerce-checkout-payment" id="payment">
+                                    <ul class="payment_methods methods list-none">
+                                        <li class="payment_method_bacs">
+                                            <input type="radio" data-order_button_text="" value="bacs" name="payment_method"
+                                                class="input-radio" id="payment_method_bacs" checked="checked">
+                                            <label for="payment_method_bacs">Direct Bank Transfer </label>
+                                            <div style="" class="payment_box payment_method_bacs">
+                                                <p>Make your payment directly into our bank account. Please use
+                                                    your
+                                                    Order
+                                                    ID as the payment reference. Your order won’t be shipped until
+                                                    the
+                                                    funds have cleared in our account.</p>
+                                            </div>
+                                        </li>
+                                        <li class="payment_method_cod">
+                                            <input type="radio" data-order_button_text="" value="cod" name="payment_method"
+                                                class="input-radio" id="payment_method_cod">
+                                            <label for="payment_method_cod">Cash on Delivery </label>
+                                            <div style="display:none;" class="payment_box payment_method_cod">
+                                                <p>Pay with cash upon delivery.</p>
+                                            </div>
+                                        </li>
+                                        <li class="payment_method_paypal">
+                                            <input type="radio" data-order_button_text="Proceed to PayPal" value="paypal"
+                                                name="payment_method" class="input-radio" id="payment_method_paypal">
+                                            <label for="payment_method_paypal">
+                                                PayPal <img alt="PayPal Acceptance Mark" src="images/page/payment.png"><a
+                                                    title="What is PayPal?" onclick="javascript:window.open('https://www.paypal.com/gb/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"
+                                                    class="about_paypal" href="https://www.paypal.com/gb/webapps/mpp/paypal-popup">What
+                                                    is PayPal?</a>
+                                            </label>
+                                            <div style="display:none;" class="payment_box payment_method_paypal">
+                                                <p>Pay via PayPal; you can pay with your credit card if you don’t
+                                                    have
+                                                    a
+                                                    PayPal account.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="form-row place-order form-group">
+                                        <input type="hidden" data-value="Place order" value={{totalPrice}} id="place_order"
+                                            name="orderPrice" class="button alt bg-color form-control">
+                                        <input type="submit" data-value="Place order" value="Place order" id="place_order"
+                                            name="woocommerce_checkout_place_order" class="button alt bg-color form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Content Pages -->
+</section>
+<!-- End Content -->
+{{>footer}}

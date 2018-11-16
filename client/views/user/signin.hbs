@@ -1,0 +1,56 @@
+<div class="signup__container">
+    <div class="container__child signup__thumbnail">
+        {{#if hasErrors}}
+        <div class="alert alert-danger">
+            {{#each message}}
+            <p>{{this}}</p>
+            <br>
+            {{/each}}
+        </div>
+        {{/if}}
+        <div class="thumbnail__content text-center">
+            <h1 class="heading--primary">Welcome to MiCourVision.</h1>
+        </div>
+
+        <div class="thumbnail__links">
+            <div class="thumbnail__content text-center">
+                <h2 class="heading--secondary">Are you ready to join the elite?</h2>
+            </div>
+            <br>
+            <ul class="list-inline m-b-0 text-center">
+                <li><a href="https://instagram.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+        </div>
+        <div class="signup__overlay"></div>
+    </div>
+    <div class="form container__child signup__form">
+        <div id="login" class="active">
+            <h1>Sign In</h1>
+
+            <form action="/user/signin" method="post">
+
+                <div class="field-wrap">
+                    <label>
+                        Email Address<span class="req">*</span>
+                    </label>
+                    <input type="email" name="email" required autocomplete="off" />
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Password<span class="req">*</span>
+                    </label>
+                    <input type="password" name="password" required autocomplete="off" />
+                </div>
+
+                <p class="forgot"> <a href="#">Forgot Password?</a> | <a href="/user/signup">Don't have an account?</a></p>
+                <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                <button class="button button-block" />Log In</button>
+
+            </form>
+
+        </div>
+    </div> <!-- /form -->
+</div>

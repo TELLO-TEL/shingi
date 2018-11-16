@@ -1,0 +1,117 @@
+<header id="header">
+    <div class="top-header bg-color2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <p class="desc white hot-line"><span class="smoke">Call Hotline:</span> 01678 311 160</p>
+                </div>
+                <div class="col-sm-8 col-xs-12">
+                    <ul class="search-cart-top list-inline-block pull-right">
+                        <li>
+                            <form class="search-hover">
+                                <input type="text" name="s" />
+                                <input type="hidden" />
+                                <span class="smoke"><i class="title18 white icon ion-ios-search-strong"></i>Search</span>
+                            </form>
+                        </li>
+                        {{#if login}}
+                        <li>
+                            <a href="/user/profile" class="sign-up smoke"><span class="white title18"><i class="icon ion-android-person"></i></span>User
+                                Account</a>
+                            <a href="/user/logout" class="sign-up smoke"><span class="white title18"><i class="icon ion-android-person"></i></span>Logout</a>
+                        </li>
+                        {{else}}
+                        <li>
+                            <a href="/user/signup" class="sign-up smoke"><span class="white title18"><i class="icon ion-android-person"></i></span>Sign
+                                Up</a>
+                        </li>
+                        <li>
+                            <a href="/user/signin" class="sign-up smoke"><span class="white title18"><i class="icon ion-android-person"></i></span>Sign
+                                In</a>
+                        </li>
+                        {{/if}}
+                        <li>
+                            <div class="mini-cart-box mini-cart1 dropdown-box">
+                                <a class="mini-cart-link" href="/shopping-cart">
+                                    <span class="mini-cart-icon title18 white"><i class="icon ion-android-cart"></i></span>
+                                    <sup class="mini-cart-number white title10">{{session.cart.totalQty}}</sup>
+                                    <span class="mini-cart-label smoke">Cart</span>
+                                </a>
+                                <div class="mini-cart-content dropdown-list text-left">
+                                    <h2 class="title18 font-bold rale-font">{{session.cart.totalQty}} Item(s) in my cart</h2>
+                                   
+                                    <div class="list-mini-cart-it em">
+                                        {{#each session.cart.items}}
+                                        <div class="product-mini-cart table">
+                                            <div class="product-thumb">
+                                                <a href="/detail-view" class="product-thumb-link"><img alt="" src="{{this.item.imagePath}}"></a>
+                                            </div>
+                                            <div class="product-info">
+                                                <h3 class="product-title title16 font-bold"><a href="#">{{this.item.title}}</a></h3>
+                                                <div class="product-price">
+                                                    <ins class="title14 font-bold"><span>${{this.price}}</span></ins>
+                                                </div>
+                                                <div class="mini-cart-qty">
+                                                    <label>Qty:</label>
+                                                    <span>{{this.qty}}</span>
+                                                </div>
+                                            </div>
+                                            <div class="product-delete text-right">
+                                                <a href="/remove-to-cart/{{this.item._id}}" class="remove-product"><i class="icon ion-trash-a"></i></a>
+                                            </div>
+                                        </div>
+                                        {{/each}}
+                                    </div>
+                                    <div class="mini-cart-total text-uppercase rale-font title18 clearfix">
+                                        <span class="pull-left">TOTAL</span>
+                                        <strong class="pull-right color">${{session.cart.totalPrice}}</strong>
+                                    </div>
+                                    <div class="mini-cart-button">
+                                        <a class="mini-cart-view shop-button color" href="/shopping-cart">View my cart
+                                        </a>
+                                        <a class="mini-cart-checkout shop-button color" href="/checkout">Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Header -->
+    <div class="header-nav bg-white header-ontop">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12 col-xs-9">
+                    <div class="logo logo1">
+                        <h1 class="hidden">MiCourVision</h1>
+                        <a href="#"><img src="images/home/home1/logo.png" height="70px" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-12 col-xs-3">
+                    <nav class="main-nav main-nav1 pull-right">
+                        <ul class="list-inline-block">
+                            <li class="">
+                                <a href="/home"><i class="icon ion-ios-home"></i>Home</a>
+                            </li>
+                            <li><a href="/about"> <i class="icon ion-flash"></i>About Us</a></li>
+                            <li><a href="/contact"><i class="icon ion-ios-contact"></i>Contact Us</a></li>
+                            <li>
+                                <a href="/mobile-shop-list-view"><i class="icon ion-android-phone-landscape"></i>Mobile Shop</a>
+                            </li>
+                            <li>
+                                <a href="/laptop-shop-list-view"><i class="icon ion-android-laptop"></i>Laptop Shop</a>
+                            </li>
+                            <li class="">
+                                <a href="/list-view"><i class="icon ion-bag"></i>Shop</a>
+                            </li>
+                        </ul>
+                        <a href="#" class="toggle-mobile-menu"><span></span></a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Header Nav -->
+</header>
